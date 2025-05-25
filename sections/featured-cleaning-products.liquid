@@ -1,0 +1,120 @@
+{% schema %}
+{
+  "name": "Featured Cleaning Products",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "default": "Our Best Selling Products",
+      "label": "Heading"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "default": "<p>High-quality cleaning solutions for every surface in your home or office</p>",
+      "label": "Description"
+    },
+    {
+      "type": "collection",
+      "id": "collection",
+      "label": "Collection"
+    },
+    {
+      "type": "range",
+      "id": "products_to_show",
+      "min": 2,
+      "max": 12,
+      "step": 1,
+      "default": 4,
+      "label": "Maximum products to show"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_view_all",
+      "default": true,
+      "label": "Show "View all" button"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Featured Cleaning Products"
+    }
+  ]
+}
+{% endschema %}
+
+{%- if section.settings.collection != blank -%}
+  {%- assign collection = collections[section.settings.collection] -%}
+  <div class="featured-cleaning-products page-width">
+    <div class="section-header text-center">
+      <h2 class="h1">{{ section.settings.heading | escape }}</h2>
+      {%- if section.settings.description != blank -%}
+        <div class="rte">{{ section.settings.description }}</div>
+      {%- endif -%}
+    </div>
+
+    <div class="grid grid--2-col grid--4-col-desktop">
+      {%- for product in collection.products limit: section.settings.products_to_show -%}
+        <div class="grid__item">
+          {% render 'product-card',
+            product: product,
+            show_secondary_image: true,
+            show_vendor: false,
+            show_rating: true
+          %}
+        </div>
+      {%- endfor -%}
+    </div>
+
+    {%- if section.settings.show_view_all and section.settings.collection != blank -%}
+      <div class="text-center">
+        <a href="{{ collection.url }}" class="button button--primary">
+          {{ 'collections.general.view_all' | t }}
+        </a>
+      </div>
+    {%- endif -%}
+  </div>
+{%- endif -%}
+
+<style>
+  .featured-cleaning-products {
+    padding: 60px 0;
+  }
+  .featured-cleaning-products .section-header {
+    margin-bottom: 40px;
+  }
+  .featured-cleaning-products .grid {
+    margin-bottom: 40px;
+    row-gap: 30px;
+  }
+  .featured-cleaning-products .product-card {
+    height: 100%;
+    padding: 20px;
+    border-radius: 8px;
+    background: #fff;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .featured-cleaning-products .product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+  }
+  .featured-cleaning-products .product-card__image-container {
+    margin-bottom: 15px;
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  .featured-cleaning-products .product-card__title {
+    font-size: 1rem;
+    margin-bottom: 8px;
+  }
+  .featured-cleaning-products .price {
+    color: #2e2e2e;
+    font-weight: 600;
+  }
+  .featured-cleaning-products .button--primary {
+    margin-top: 20px;
+  }
+</style>

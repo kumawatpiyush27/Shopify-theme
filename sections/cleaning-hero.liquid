@@ -1,0 +1,95 @@
+{% schema %}
+{
+  "name": "Cleaning Hero",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "background_image",
+      "label": "Background Image",
+      "info": "Recommended size: 1920x800px"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "default": "Professional Cleaning Solutions",
+      "label": "Heading"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "default": "<p>Discover our premium range of cleaning products for spotless results every time</p>",
+      "label": "Description"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "default": "Shop Now",
+      "label": "Button Label"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button Link"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Cleaning Hero"
+    }
+  ]
+}
+{% endschema %}
+
+<div class="cleaning-hero" style="background-image: url('{{ section.settings.background_image | img_url: '1920x' }}');">
+  <div class="page-width">
+    <div class="cleaning-hero__content">
+      <h1 class="h0">{{ section.settings.heading }}</h1>
+      <div class="rte">{{ section.settings.description }}</div>
+      {% if section.settings.button_label != blank %}
+        <a href="{{ section.settings.button_link }}" class="button button--primary">
+          {{ section.settings.button_label }}
+        </a>
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+<style>
+  .cleaning-hero {
+    position: relative;
+    padding: 120px 0;
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    text-align: center;
+  }
+  .cleaning-hero:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.4);
+  }
+  .cleaning-hero__content {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  .cleaning-hero h1 {
+    color: #fff;
+    margin-bottom: 24px;
+  }
+  .cleaning-hero .rte {
+    font-size: 1.25rem;
+    margin-bottom: 32px;
+  }
+  .cleaning-hero .button {
+    padding: 12px 32px;
+    font-size: 1.125rem;
+  }
+</style>

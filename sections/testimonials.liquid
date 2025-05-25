@@ -1,0 +1,302 @@
+{% schema %}
+{
+  "name": "Testimonials",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "default": "What Our Customers Say",
+      "label": "Heading"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "default": "<p>Don't just take our word for it - hear from our satisfied customers</p>",
+      "label": "Description"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background Color",
+      "default": "#f5f9f5"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "testimonial",
+      "name": "Testimonial",
+      "settings": [
+        {
+          "type": "range",
+          "id": "rating",
+          "min": 1,
+          "max": 5,
+          "step": 1,
+          "label": "Rating",
+          "default": 5
+        },
+        {
+          "type": "richtext",
+          "id": "testimonial",
+          "label": "Testimonial",
+          "default": "<p>These cleaning products are amazing! My house has never been cleaner and I love that they're eco-friendly.</p>"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Customer image"
+        },
+        {
+          "type": "text",
+          "id": "author",
+          "label": "Author",
+          "default": "Sarah M."
+        },
+        {
+          "type": "text",
+          "id": "position",
+          "label": "Author's position",
+          "default": "Homeowner"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Testimonials",
+      "blocks": [
+        {
+          "type": "testimonial"
+        },
+        {
+          "type": "testimonial"
+        },
+        {
+          "type": "testimonial"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
+
+<div class="testimonials-section" style="background-color: {{ section.settings.background_color }};">
+  <div class="page-width">
+    <div class="section-header text-center">
+      <h2 class="h1">{{ section.settings.heading | escape }}</h2>
+      {%- if section.settings.description != blank -%}
+        <div class="rte">{{ section.settings.description }}</div>
+      {%- endif -%}
+    </div>
+
+    <div class="testimonials-slider" data-testimonials-slider>
+      {%- for block in section.blocks -%}
+        <div class="testimonial-card" {{ block.shopify_attributes }}>
+          <div class="testimonial-rating">
+            {%- for i in (1..5) -%}
+              <span class="star {% if forloop.index <= block.settings.rating %}active{% endif %}">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                  <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                </svg>
+              </span>
+            {%- endfor -%}
+          </div>
+          <div class="testimonial-content">
+            <div class="rte">{{ block.settings.testimonial }}</div>
+          </div>
+          <div class="testimonial-author">
+            {%- if block.settings.image != blank -%}
+              <div class="testimonial-image">
+                <img 
+                  src="{{ block.settings.image | img_url: '100x100', crop: 'center' }}" 
+                  alt="{{ block.settings.author | escape }}"
+                  width="50"
+                  height="50"
+                  loading="lazy"
+                >
+              </div>
+            {%- endif -%}
+            <div class="testimonial-info">
+              <h4 class="h5">{{ block.settings.author | escape }}</h4>
+              {%- if block.settings.position != blank -%}
+                <p class="testimonial-position">{{ block.settings.position | escape }}</p>
+              {%- endif -%}
+            </div>
+          </div>
+        </div>
+      {%- endfor -%}
+    </div>
+  </div>
+</div>
+
+<style>
+  .testimonials-section {
+    padding: 80px 0;
+    position: relative;
+  }
+  .testimonials-section .section-header {
+    margin-bottom: 50px;
+  }
+  .testimonial-card {
+    background: #fff;
+    border-radius: 8px;
+    padding: 40px 30px;
+    margin: 0 15px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    height: 100%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .testimonial-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+  }
+  .testimonial-rating {
+    color: #ffc107;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+  }
+  .testimonial-rating .star {
+    margin-right: 3px;
+  }
+  .testimonial-rating .star:not(.active) {
+    color: #e0e0e0;
+  }
+  .testimonial-content {
+    font-size: 1.0625rem;
+    line-height: 1.7;
+    color: #444;
+    margin-bottom: 25px;
+    position: relative;
+  }
+  .testimonial-content:before {
+    content: '\201C';
+    font-size: 4rem;
+    font-family: Georgia, serif;
+    color: #e0e0e0;
+    position: absolute;
+    left: -20px;
+    top: -15px;
+    line-height: 1;
+    z-index: 0;
+  }
+  .testimonial-content > * {
+    position: relative;
+    z-index: 1;
+  }
+  .testimonial-author {
+    display: flex;
+    align-items: center;
+  }
+  .testimonial-image {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 15px;
+    flex-shrink: 0;
+  }
+  .testimonial-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .testimonial-info h4 {
+    margin: 0 0 4px;
+    color: #2e2e2e;
+  }
+  .testimonial-position {
+    margin: 0;
+    font-size: 0.875rem;
+    color: #666;
+  }
+  .testimonials-slider {
+    position: relative;
+  }
+  .slick-dots {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    padding: 0;
+    list-style: none;
+  }
+  .slick-dots li {
+    margin: 0 5px;
+  }
+  .slick-dots button {
+    width: 10px;
+    height: 10px;
+    padding: 0;
+    border: none;
+    border-radius: 50%;
+    background: #ddd;
+    text-indent: -9999px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  .slick-dots li.slick-active button {
+    background: #2e7d32;
+    transform: scale(1.2);
+  }
+  @media (max-width: 767px) {
+    .testimonial-card {
+      margin: 0 10px;
+      padding: 30px 20px;
+    }
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    if (typeof jQuery !== 'undefined' && typeof jQuery.fn.slick !== 'undefined') {
+      initTestimonialSlider();
+    } else {
+      var script = document.createElement('script');
+      script.src = 'https://code.jquery.com/jquery-3.6.0.min.js';
+      script.integrity = 'sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=';
+      script.crossOrigin = 'anonymous';
+      script.onload = function() {
+        var slickScript = document.createElement('script');
+        slickScript.src = 'https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js';
+        var slickStyles = document.createElement('link');
+        slickStyles.rel = 'stylesheet';
+        slickStyles.href = 'https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css';
+        document.head.appendChild(slickStyles);
+        document.head.appendChild(slickScript);
+        slickScript.onload = initTestimonialSlider;
+      };
+      document.head.appendChild(script);
+    }
+
+    function initTestimonialSlider() {
+      $('.testimonials-slider').slick({
+        dots: true,
+        arrows: false,
+        infinite: true,
+        speed: 500,
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 5000,
+        responsive: [
+          {
+            breakpoint: 1024,
+            settings: {
+              slidesToShow: 2,
+              slidesToScroll: 1
+            }
+          },
+          {
+            breakpoint: 600,
+            settings: {
+              slidesToShow: 1,
+              slidesToScroll: 1
+            }
+          }
+        ]
+      });
+    }
+  });
+</script>

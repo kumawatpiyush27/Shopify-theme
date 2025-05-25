@@ -1,0 +1,197 @@
+{% schema %}
+{
+  "name": "Cleaning Benefits",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "default": "Why Choose Our Cleaning Products?",
+      "label": "Heading"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "default": "<p>We're committed to providing effective and eco-friendly cleaning solutions</p>",
+      "label": "Description"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background Color",
+      "default": "#f9f9f9"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "benefit",
+      "name": "Benefit",
+      "settings": [
+        {
+          "type": "select",
+          "id": "icon",
+          "label": "Icon",
+          "options": [
+            {
+              "value": "leaf",
+              "label": "Eco-friendly"
+            },
+            {
+              "value": "star",
+              "label": "Premium Quality"
+            },
+            {
+              "value": "shield",
+              "label": "Safe & Non-Toxic"
+            },
+            {
+              "value": "truck",
+              "label": "Fast Shipping"
+            },
+            {
+              "value": "medal",
+              "label": "Proven Results"
+            },
+            {
+              "value": "heart",
+              "label": "Customer Love"
+            }
+          ],
+          "default": "leaf"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Eco-Friendly Formula"
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Text",
+          "default": "<p>Our products are made with environmentally friendly ingredients that are safe for your family and pets.</p>"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Cleaning Benefits",
+      "blocks": [
+        {
+          "type": "benefit",
+          "settings": {
+            "icon": "leaf",
+            "title": "Eco-Friendly Formula"
+          }
+        },
+        {
+          "type": "benefit",
+          "settings": {
+            "icon": "star",
+            "title": "Premium Quality"
+          }
+        },
+        {
+          "type": "benefit",
+          "settings": {
+            "icon": "shield",
+            "title": "Safe & Non-Toxic"
+          }
+        },
+        {
+          "type": "benefit",
+          "settings": {
+            "icon": "truck",
+            "title": "Fast Shipping"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
+
+<div class="cleaning-benefits" style="background-color: {{ section.settings.background_color }};">
+  <div class="page-width">
+    <div class="section-header text-center">
+      <h2 class="h1">{{ section.settings.heading | escape }}</h2>
+      {%- if section.settings.description != blank -%}
+        <div class="rte">{{ section.settings.description }}</div>
+      {%- endif -%}
+    </div>
+
+    <div class="grid grid--1-col grid--2-col-tablet grid--4-col-desktop">
+      {%- for block in section.blocks -%}
+        <div class="grid__item" {{ block.shopify_attributes }}>
+          <div class="benefit-card">
+            <div class="benefit-icon">
+              {%- case block.settings.icon -%}
+                {%- when 'leaf' -%}
+                  <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.5 17 4.5 17 4.5 17.5 6 18 8c.5 1.5 1 4 1 6s-1 4-7 4z"></path><path d="M9 14c0 6-5 8-5 8s3.5-2 4-6"></path></svg>
+                {%- when 'star' -%}
+                  <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2z"></polygon></svg>
+                {%- when 'shield' -%}
+                  <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                {%- when 'truck' -%}
+                  <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 16 8z"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg>
+                {%- when 'medal' -%}
+                  <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23l5-3 5 3-1.21-9.12"></polyline></svg>
+                {%- when 'heart' -%}
+                  <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+              {%- endcase -%}
+            </div>
+            <h3 class="h4">{{ block.settings.title | escape }}</h3>
+            <div class="rte">{{ block.settings.text }}</div>
+          </div>
+        </div>
+      {%- endfor -%}
+    </div>
+  </div>
+</div>
+
+<style>
+  .cleaning-benefits {
+    padding: 80px 0;
+  }
+  .cleaning-benefits .section-header {
+    margin-bottom: 60px;
+  }
+  .benefit-card {
+    background: #fff;
+    border-radius: 8px;
+    padding: 30px 20px;
+    height: 100%;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .benefit-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+  }
+  .benefit-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f0f7f0;
+    border-radius: 50%;
+    color: #2e7d32;
+  }
+  .benefit-card h3 {
+    margin-bottom: 15px;
+    color: #2e2e2e;
+  }
+  .benefit-card .rte {
+    font-size: 0.9375rem;
+    color: #666;
+  }
+  .grid--4-col-desktop .grid__item {
+    padding: 0 15px;
+    margin-bottom: 30px;
+  }
+</style>

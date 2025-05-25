@@ -1,48 +1,123 @@
 {
   "sections": {
-    "image_banner": {
-      "type": "image-banner",
-      "blocks": {
-        "heading": {
-          "type": "heading",
+    "cleaning_hero": {
+      "type": "cleaning-hero",
+      "settings": {
+        "heading": "Professional Cleaning Solutions",
+        "description": "<p>Discover our premium range of cleaning products for spotless results every time</p>",
+        "button_label": "Shop Now",
+        "button_link": "shopify://collections/all"
+      }
+    },
+    "featured_cleaning_products": {
+      "type": "featured-cleaning-products",
+      "settings": {
+        "heading": "Our Best Selling Products",
+        "description": "<p>High-quality cleaning solutions for every surface in your home or office</p>",
+        "collection": "all",
+        "products_to_show": 4,
+        "show_view_all": true
+      }
+    },
+    "cleaning_benefits": {
+      "type": "cleaning-benefits",
+      "settings": {
+        "heading": "Why Choose Our Cleaning Products?",
+        "description": "<p>We're committed to providing effective and eco-friendly cleaning solutions</p>",
+        "background_color": "#f9f9f9"
+      },
+      "blocks": [
+        {
+          "type": "benefit",
           "settings": {
-            "heading": "Browse our latest products",
-            "heading_size": "h0"
+            "icon": "leaf",
+            "title": "Eco-Friendly Formula",
+            "text": "<p>Our products are made with environmentally friendly ingredients that are safe for your family and pets.</p>"
           }
         },
-        "button": {
-          "type": "buttons",
+        {
+          "type": "benefit",
           "settings": {
-            "button_label_1": "Shop all",
-            "button_link_1": "shopify://collections/all",
-            "button_style_secondary_1": true,
-            "button_label_2": "",
-            "button_link_2": "",
-            "button_style_secondary_2": false
+            "icon": "star",
+            "title": "Premium Quality",
+            "text": "<p>We use only the highest quality ingredients to ensure superior cleaning performance.</p>"
+          }
+        },
+        {
+          "type": "benefit",
+          "settings": {
+            "icon": "shield",
+            "title": "Safe & Non-Toxic",
+            "text": "<p>All our products are non-toxic and safe for use around children and pets.</p>"
+          }
+        },
+        {
+          "type": "benefit",
+          "settings": {
+            "icon": "truck",
+            "title": "Fast Shipping",
+            "text": "<p>Quick and reliable delivery to your doorstep, with free shipping on all orders over $50.</p>"
           }
         }
-      },
-      "block_order": [
-        "heading",
-        "button"
-      ],
+      ]
+    },
+    "testimonials": {
+      "type": "testimonials",
       "settings": {
-        "image_overlay_opacity": 40,
-        "image_height": "large",
-        "desktop_content_position": "bottom-center",
-        "show_text_box": false,
-        "image_behavior": "none",
-        "desktop_content_alignment": "center",
-        "color_scheme": "scheme-3",
-        "mobile_content_alignment": "center",
-        "stack_images_on_mobile": false,
-        "show_text_below": false
+        "heading": "What Our Customers Say",
+        "description": "<p>Don't just take our word for it - hear from our satisfied customers</p>",
+        "background_color": "#f5f9f5"
+      },
+      "blocks": [
+        {
+          "type": "testimonial",
+          "settings": {
+            "rating": 5,
+            "testimonial": "<p>These cleaning products are amazing! My house has never been cleaner and I love that they're eco-friendly.</p>",
+            "author": "Sarah M.",
+            "position": "Homeowner"
+          }
+        },
+        {
+          "type": "testimonial",
+          "settings": {
+            "rating": 5,
+            "testimonial": "<p>I've tried many cleaning products, but these are by far the best. They work great and smell wonderful!</p>",
+            "author": "John D.",
+            "position": "Professional Cleaner"
+          }
+        },
+        {
+          "type": "testimonial",
+          "settings": {
+            "rating": 5,
+            "testimonial": "<p>As someone with allergies, I appreciate that these products are non-toxic and gentle on my skin.</p>",
+            "author": "Emma R.",
+            "position": "Customer"
+          }
+        }
+      ]
+    },
+    "cta_banner": {
+      "type": "cta-banner",
+      "settings": {
+        "heading": "Ready to Experience the Difference?",
+        "text": "<p>Shop our premium cleaning products today and transform your cleaning routine</p>",
+        "button_label": "Shop Now",
+        "button_link": "shopify://collections/all",
+        "secondary_button_label": "Learn More",
+        "secondary_button_link": "shopify://pages/about-us",
+        "text_alignment": "center",
+        "overlay_color": "#000000",
+        "overlay_opacity": 30,
+        "padding_top": 80,
+        "padding_bottom": 80
       }
     },
     "featured_collection": {
       "type": "featured-collection",
       "settings": {
-        "title": "Featured products",
+        "title": "Shop by Category",
         "heading_size": "h2",
         "description": "",
         "show_description": false,
