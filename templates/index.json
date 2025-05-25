@@ -23,40 +23,40 @@
         "color_scheme": "scheme-1",
         "columns_mobile": "2"
       },
-      "blocks": [
-        {
+      "blocks": {
+        "block_1": {
           "type": "column",
           "settings": {
             "title": "Free Shipping",
-            "text": "On orders over $50",
+            "text": "<p>On orders over $50</p>",
             "icon": "truck"
           }
         },
-        {
+        "block_2": {
           "type": "column",
           "settings": {
             "title": "Eco-Friendly",
-            "text": "Safe for your family & pets",
+            "text": "<p>Safe for your family & pets</p>",
             "icon": "leaf"
           }
         },
-        {
+        "block_3": {
           "type": "column",
           "settings": {
             "title": "Satisfaction",
-            "text": "30-day money back guarantee",
+            "text": "<p>30-day money back guarantee</p>",
             "icon": "medal"
           }
         },
-        {
+        "block_4": {
           "type": "column",
           "settings": {
             "title": "Support",
-            "text": "24/7 customer service",
+            "text": "<p>24/7 customer service</p>",
             "icon": "headset"
           }
         }
-      ]
+      }
     },
     "featured_products": {
       "type": "featured-cleaning-products",
@@ -80,8 +80,8 @@
         "text_alignment": "center",
         "color_scheme": "scheme-2"
       },
-      "blocks": [
-        {
+      "blocks": {
+        "block_1": {
           "type": "heading",
           "settings": {
             "heading": "Eco-Friendly Cleaning",
@@ -91,7 +91,7 @@
             "button_link": "shopify://pages/eco-friendly"
           }
         }
-      ]
+      }
     },
     "product_benefits": {
       "type": "cleaning-benefits",
@@ -100,8 +100,8 @@
         "description": "<p>We're committed to providing effective and eco-friendly cleaning solutions for every home</p>",
         "background_color": "#f9f9f9"
       },
-      "blocks": [
-        {
+      "blocks": {
+        "block_1": {
           "type": "benefit",
           "settings": {
             "icon": "leaf",
@@ -109,7 +109,7 @@
             "text": "<p>Made with natural, biodegradable ingredients that are safe for your family and the environment.</p>"
           }
         },
-        {
+        "block_2": {
           "type": "benefit",
           "settings": {
             "icon": "star",
@@ -117,7 +117,7 @@
             "text": "<p>Formulated with high-quality ingredients for superior cleaning performance.</p>"
           }
         },
-        {
+        "block_3": {
           "type": "benefit",
           "settings": {
             "icon": "shield",
@@ -125,7 +125,7 @@
             "text": "<p>Free from harsh chemicals, safe for children, pets, and sensitive skin.</p>"
           }
         },
-        {
+        "block_4": {
           "type": "benefit",
           "settings": {
             "icon": "medal",
@@ -133,7 +133,7 @@
             "text": "<p>Trusted by thousands of satisfied customers and professional cleaners.</p>"
           }
         }
-      ]
+      }
     },
     "testimonials": {
       "type": "testimonials",
@@ -142,8 +142,8 @@
         "description": "<p>Don't just take our word for it - hear what our customers have to say</p>",
         "background_color": "#f5f9f5"
       },
-      "blocks": [
-        {
+      "blocks": {
+        "block_1": {
           "type": "testimonial",
           "settings": {
             "rating": 5,
@@ -152,7 +152,7 @@
             "position": "Homeowner"
           }
         },
-        {
+        "block_2": {
           "type": "testimonial",
           "settings": {
             "rating": 5,
@@ -161,7 +161,7 @@
             "position": "Professional Cleaner"
           }
         },
-        {
+        "block_3": {
           "type": "testimonial",
           "settings": {
             "rating": 5,
@@ -170,7 +170,7 @@
             "position": "Customer"
           }
         }
-      ]
+      }
     },
     "cta_banner": {
       "type": "cta-banner",
