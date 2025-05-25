@@ -1,6 +1,6 @@
 {
   "sections": {
-    "cleaning_hero": {
+    "hero_banner": {
       "type": "cleaning-hero",
       "settings": {
         "heading": "Professional Cleaning Solutions",
@@ -9,7 +9,7 @@
         "button_link": "shopify://collections/all"
       }
     },
-    "featured_cleaning_products": {
+    "featured_products": {
       "type": "featured-cleaning-products",
       "settings": {
         "heading": "Our Best Selling Products",
@@ -19,7 +19,7 @@
         "show_view_all": true
       }
     },
-    "cleaning_benefits": {
+    "product_benefits": {
       "type": "cleaning-benefits",
       "settings": {
         "heading": "Why Choose Our Cleaning Products?",
