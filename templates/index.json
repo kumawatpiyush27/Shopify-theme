@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "hero_slider": {
@@ -23,40 +32,40 @@
         "color_scheme": "scheme-1",
         "columns_mobile": "2"
       },
-      "blocks": {
-        "block_1": {
+      "blocks": [
+        {
           "type": "column",
           "settings": {
             "title": "Free Shipping",
-            "text": "<p>On orders over $50</p>",
+            "text": "On orders over $50",
             "icon": "truck"
           }
         },
-        "block_2": {
+        {
           "type": "column",
           "settings": {
             "title": "Eco-Friendly",
-            "text": "<p>Safe for your family & pets</p>",
+            "text": "Safe for your family & pets",
             "icon": "leaf"
           }
         },
-        "block_3": {
+        {
           "type": "column",
           "settings": {
             "title": "Satisfaction",
-            "text": "<p>30-day money back guarantee</p>",
+            "text": "30-day money back guarantee",
             "icon": "medal"
           }
         },
-        "block_4": {
+        {
           "type": "column",
           "settings": {
             "title": "Support",
-            "text": "<p>24/7 customer service</p>",
+            "text": "24/7 customer service",
             "icon": "headset"
           }
         }
-      }
+      ]
     },
     "featured_products": {
       "type": "featured-cleaning-products",
@@ -80,8 +89,8 @@
         "text_alignment": "center",
         "color_scheme": "scheme-2"
       },
-      "blocks": {
-        "block_1": {
+      "blocks": [
+        {
           "type": "heading",
           "settings": {
             "heading": "Eco-Friendly Cleaning",
@@ -91,7 +100,7 @@
             "button_link": "shopify://pages/eco-friendly"
           }
         }
-      }
+      ]
     },
     "product_benefits": {
       "type": "cleaning-benefits",
@@ -100,8 +109,8 @@
         "description": "<p>We're committed to providing effective and eco-friendly cleaning solutions for every home</p>",
         "background_color": "#f9f9f9"
       },
-      "blocks": {
-        "block_1": {
+      "blocks": [
+        {
           "type": "benefit",
           "settings": {
             "icon": "leaf",
@@ -109,7 +118,7 @@
             "text": "<p>Made with natural, biodegradable ingredients that are safe for your family and the environment.</p>"
           }
         },
-        "block_2": {
+        {
           "type": "benefit",
           "settings": {
             "icon": "star",
@@ -117,7 +126,7 @@
             "text": "<p>Formulated with high-quality ingredients for superior cleaning performance.</p>"
           }
         },
-        "block_3": {
+        {
           "type": "benefit",
           "settings": {
             "icon": "shield",
@@ -125,7 +134,7 @@
             "text": "<p>Free from harsh chemicals, safe for children, pets, and sensitive skin.</p>"
           }
         },
-        "block_4": {
+        {
           "type": "benefit",
           "settings": {
             "icon": "medal",
@@ -133,7 +142,7 @@
             "text": "<p>Trusted by thousands of satisfied customers and professional cleaners.</p>"
           }
         }
-      }
+      ]
     },
     "testimonials": {
       "type": "testimonials",
@@ -142,8 +151,8 @@
         "description": "<p>Don't just take our word for it - hear what our customers have to say</p>",
         "background_color": "#f5f9f5"
       },
-      "blocks": {
-        "block_1": {
+      "blocks": [
+        {
           "type": "testimonial",
           "settings": {
             "rating": 5,
@@ -152,7 +161,7 @@
             "position": "Homeowner"
           }
         },
-        "block_2": {
+        {
           "type": "testimonial",
           "settings": {
             "rating": 5,
@@ -161,7 +170,7 @@
             "position": "Professional Cleaner"
           }
         },
-        "block_3": {
+        {
           "type": "testimonial",
           "settings": {
             "rating": 5,
@@ -170,60 +179,54 @@
             "position": "Customer"
           }
         }
-      }
+      ]
     },
     "cta_banner": {
       "type": "cta-banner",
       "settings": {
-        "heading": "Ready for a Cleaner Home?",
-        "text": "<p>Join thousands of satisfied customers who trust our cleaning solutions</p>",
-        "button_label": "Shop Now",
-        "button_link": "shopify://collections/all",
-        "secondary_button_label": "Contact Us",
-        "secondary_button_link": "shopify://pages/contact",
-        "text_alignment": "center",
-        "background_image": "shopify://shop_images/cta-bg.jpg",
-        "overlay_color": "#000000",
-        "overlay_opacity": 40,
-        "padding_top": 100,
-        "padding_bottom": 100
+        "image_overlay_opacity": 40,
+        "image_height": "large",
+        "desktop_content_position": "bottom-center",
+        "show_text_box": false,
+        "image_behavior": "none",
+        "desktop_content_alignment": "center",
+        "color_scheme": "scheme-3",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": false,
+        "show_text_below": false
       }
     },
-    "featured_blog": {
-      "type": "featured-blog",
+    "featured_collection": {
+      "type": "featured-collection",
       "settings": {
-        "blog": "news",
-        "post_limit": 3,
-        "columns_desktop": 3,
-        "show_image": true,
-        "show_date": true,
-        "show_author": false,
-        "show_excerpt": true,
+        "title": "Featured products",
+        "heading_size": "h2",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "collection": "all",
+        "products_to_show": 8,
+        "columns_desktop": 4,
+        "color_scheme": "scheme-1",
+        "full_width": false,
         "show_view_all": true,
-        "color_scheme": "scheme-1"
-      }
-    },
-    "newsletter": {
-      "type": "newsletter",
-      "settings": {
-        "heading": "Stay Updated",
-        "text": "<p>Subscribe to our newsletter for cleaning tips, special offers, and more</p>",
-        "button_label": "Subscribe",
-        "klaviyo_list_id": "",
-        "color_scheme": "scheme-2",
-        "full_width": true
+        "view_all_style": "solid",
+        "enable_desktop_slider": false,
+        "swipe_on_mobile": false,
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none",
+        "columns_mobile": "2",
+        "padding_top": 44,
+        "padding_bottom": 36
       }
     }
   },
   "order": [
-    "hero_slider",
-    "features_bar",
-    "featured_products",
-    "banner_split",
-    "product_benefits",
-    "testimonials",
-    "cta_banner",
-    "featured_blog",
-    "newsletter"
+    "image_banner",
+    "featured_collection"
   ]
 }
