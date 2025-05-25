@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "hero_slider": {
@@ -12,6 +21,36 @@
     },
     "features_bar": {
       "type": "multicolumn",
+      "blocks": {
+        "block_1": {
+          "type": "column",
+          "settings": {
+            "title": "Free Shipping",
+            "text": "<p>On orders over $50</p>"
+          }
+        },
+        "block_2": {
+          "type": "column",
+          "settings": {
+            "title": "Eco-Friendly",
+            "text": "<p>Safe for your family & pets</p>"
+          }
+        },
+        "block_3": {
+          "type": "column",
+          "settings": {
+            "title": "Satisfaction",
+            "text": "<p>30-day money back guarantee</p>"
+          }
+        },
+        "block_4": {
+          "type": "column",
+          "settings": {
+            "title": "Support",
+            "text": "<p>24/7 customer service</p>"
+          }
+        }
+      },
       "settings": {
         "title": "",
         "heading_size": "h3",
@@ -22,41 +61,7 @@
         "background_style": "none",
         "color_scheme": "scheme-1",
         "columns_mobile": "2"
-      },
-      "blocks": [
-        {
-          "type": "column",
-          "settings": {
-            "title": "Free Shipping",
-            "text": "On orders over $50",
-            "icon": "truck"
-          }
-        },
-        {
-          "type": "column",
-          "settings": {
-            "title": "Eco-Friendly",
-            "text": "Safe for your family & pets",
-            "icon": "leaf"
-          }
-        },
-        {
-          "type": "column",
-          "settings": {
-            "title": "Satisfaction",
-            "text": "30-day money back guarantee",
-            "icon": "medal"
-          }
-        },
-        {
-          "type": "column",
-          "settings": {
-            "title": "Support",
-            "text": "24/7 customer service",
-            "icon": "headset"
-          }
-        }
-      ]
+      }
     },
     "featured_products": {
       "type": "featured-cleaning-products",
@@ -65,43 +70,32 @@
         "description": "<p>Discover our most popular cleaning solutions loved by customers</p>",
         "collection": "all",
         "products_to_show": 8,
-        "show_view_all": true,
-        "color_scheme": "scheme-1"
+        "show_view_all": true
       }
     },
     "banner_split": {
       "type": "image-with-text",
-      "settings": {
-        "image": "shopify://shop_images/eco-banner.jpg",
-        "image_behavior": "none",
-        "height": "medium",
-        "desktop_content_position": "middle-center",
-        "show_text_box": true,
-        "text_alignment": "center",
-        "color_scheme": "scheme-2"
-      },
-      "blocks": [
-        {
+      "blocks": {
+        "block_1": {
           "type": "heading",
           "settings": {
             "heading": "Eco-Friendly Cleaning",
-            "heading_size": "h2",
-            "text": "<p>Our products are made with natural ingredients that are tough on dirt but gentle on the planet.</p>",
-            "button_label": "Learn More",
-            "button_link": "shopify://pages/eco-friendly"
+            "heading_size": "h2"
           }
         }
-      ]
+      },
+      "settings": {
+        "image": "shopify://shop_images/eco-banner.jpg",
+        "height": "medium",
+        "image_behavior": "none",
+        "desktop_content_position": "middle-center",
+        "color_scheme": "scheme-2"
+      }
     },
     "product_benefits": {
       "type": "cleaning-benefits",
-      "settings": {
-        "heading": "Why Choose Our Products?",
-        "description": "<p>We're committed to providing effective and eco-friendly cleaning solutions for every home</p>",
-        "background_color": "#f9f9f9"
-      },
-      "blocks": [
-        {
+      "blocks": {
+        "block_1": {
           "type": "benefit",
           "settings": {
             "icon": "leaf",
@@ -109,7 +103,7 @@
             "text": "<p>Made with natural, biodegradable ingredients that are safe for your family and the environment.</p>"
           }
         },
-        {
+        "block_2": {
           "type": "benefit",
           "settings": {
             "icon": "star",
@@ -117,7 +111,7 @@
             "text": "<p>Formulated with high-quality ingredients for superior cleaning performance.</p>"
           }
         },
-        {
+        "block_3": {
           "type": "benefit",
           "settings": {
             "icon": "shield",
@@ -125,7 +119,7 @@
             "text": "<p>Free from harsh chemicals, safe for children, pets, and sensitive skin.</p>"
           }
         },
-        {
+        "block_4": {
           "type": "benefit",
           "settings": {
             "icon": "medal",
@@ -133,17 +127,17 @@
             "text": "<p>Trusted by thousands of satisfied customers and professional cleaners.</p>"
           }
         }
-      ]
+      },
+      "settings": {
+        "heading": "Why Choose Our Products?",
+        "description": "<p>We're committed to providing effective and eco-friendly cleaning solutions for every home</p>",
+        "background_color": "#f9f9f9"
+      }
     },
     "testimonials": {
       "type": "testimonials",
-      "settings": {
-        "heading": "Loved by Our Customers",
-        "description": "<p>Don't just take our word for it - hear what our customers have to say</p>",
-        "background_color": "#f5f9f5"
-      },
-      "blocks": [
-        {
+      "blocks": {
+        "block_1": {
           "type": "testimonial",
           "settings": {
             "rating": 5,
@@ -152,7 +146,7 @@
             "position": "Homeowner"
           }
         },
-        {
+        "block_2": {
           "type": "testimonial",
           "settings": {
             "rating": 5,
@@ -161,7 +155,7 @@
             "position": "Professional Cleaner"
           }
         },
-        {
+        "block_3": {
           "type": "testimonial",
           "settings": {
             "rating": 5,
@@ -170,11 +164,19 @@
             "position": "Customer"
           }
         }
-      ]
+      },
+      "settings": {
+        "heading": "Loved by Our Customers",
+        "description": "<p>Don't just take our word for it - hear what our customers have to say</p>",
+        "background_color": "#f5f9f5"
+      }
     },
     "cta_banner": {
       "type": "cta-banner",
       "settings": {
+        "background_image": "shopify://shop_images/cta-bg.jpg",
+        "overlay_color": "#000000",
+        "overlay_opacity": 40,
         "heading": "Ready for a Cleaner Home?",
         "text": "<p>Join thousands of satisfied customers who trust our cleaning solutions</p>",
         "button_label": "Shop Now",
@@ -182,9 +184,6 @@
         "secondary_button_label": "Contact Us",
         "secondary_button_link": "shopify://pages/contact",
         "text_alignment": "center",
-        "background_image": "shopify://shop_images/cta-bg.jpg",
-        "overlay_color": "#000000",
-        "overlay_opacity": 40,
         "padding_top": 100,
         "padding_bottom": 100
       }
@@ -195,21 +194,16 @@
         "blog": "news",
         "post_limit": 3,
         "columns_desktop": 3,
+        "show_view_all": true,
         "show_image": true,
         "show_date": true,
         "show_author": false,
-        "show_excerpt": true,
-        "show_view_all": true,
         "color_scheme": "scheme-1"
       }
     },
     "newsletter": {
       "type": "newsletter",
       "settings": {
-        "heading": "Stay Updated",
-        "text": "<p>Subscribe to our newsletter for cleaning tips, special offers, and more</p>",
-        "button_label": "Subscribe",
-        "klaviyo_list_id": "",
         "color_scheme": "scheme-2",
         "full_width": true
       }
