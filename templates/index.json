@@ -9,215 +9,76 @@
  */
 {
   "sections": {
-    "hero_slider": {
-      "type": "cleaning-hero",
-      "settings": {
-        "background_image": "",
-        "heading": "Professional Cleaning Solutions",
-        "description": "<p>Discover our premium range of cleaning products for spotless results every time</p>",
-        "button_label": "Shop Now",
-        "button_link": "shopify://collections/all"
-      }
-    },
-    "features_bar": {
-      "type": "multicolumn",
+    "image_banner": {
+      "type": "image-banner",
       "blocks": {
-        "block_1": {
-          "type": "column",
-          "settings": {
-            "title": "Free Shipping",
-            "text": "<p>On orders over $50</p>"
-          }
-        },
-        "block_2": {
-          "type": "column",
-          "settings": {
-            "title": "Eco-Friendly",
-            "text": "<p>Safe for your family & pets</p>"
-          }
-        },
-        "block_3": {
-          "type": "column",
-          "settings": {
-            "title": "Satisfaction",
-            "text": "<p>30-day money back guarantee</p>"
-          }
-        },
-        "block_4": {
-          "type": "column",
-          "settings": {
-            "title": "Support",
-            "text": "<p>24/7 customer service</p>"
-          }
-        }
-      },
-      "settings": {
-        "title": "",
-        "heading_size": "h3",
-        "image_width": "small",
-        "image_ratio": "square",
-        "columns_desktop": 4,
-        "column_alignment": "center",
-        "background_style": "none",
-        "color_scheme": "scheme-1",
-        "columns_mobile": "2"
-      }
-    },
-    "featured_products": {
-      "type": "featured-cleaning-products",
-      "settings": {
-        "heading": "Our Best Sellers",
-        "description": "<p>Discover our most popular cleaning solutions loved by customers</p>",
-        "collection": "all",
-        "products_to_show": 8,
-        "show_view_all": true
-      }
-    },
-    "banner_split": {
-      "type": "image-with-text",
-      "blocks": {
-        "block_1": {
+        "heading": {
           "type": "heading",
           "settings": {
-            "heading": "Eco-Friendly Cleaning",
-            "heading_size": "h2"
+            "heading": "Browse our latest products",
+            "heading_size": "h0"
+          }
+        },
+        "button": {
+          "type": "buttons",
+          "settings": {
+            "button_label_1": "Shop all",
+            "button_link_1": "shopify://collections/all",
+            "button_style_secondary_1": true,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
           }
         }
       },
+      "block_order": [
+        "heading",
+        "button"
+      ],
       "settings": {
-        "image": "shopify://shop_images/eco-banner.jpg",
-        "height": "medium",
+        "image_overlay_opacity": 40,
+        "image_height": "large",
+        "desktop_content_position": "bottom-center",
+        "show_text_box": false,
         "image_behavior": "none",
-        "desktop_content_position": "middle-center",
-        "color_scheme": "scheme-2"
+        "desktop_content_alignment": "center",
+        "color_scheme": "scheme-3",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": false,
+        "show_text_below": false
       }
     },
-    "product_benefits": {
-      "type": "cleaning-benefits",
-      "blocks": {
-        "block_1": {
-          "type": "benefit",
-          "settings": {
-            "icon": "leaf",
-            "title": "Eco-Friendly",
-            "text": "<p>Made with natural, biodegradable ingredients that are safe for your family and the environment.</p>"
-          }
-        },
-        "block_2": {
-          "type": "benefit",
-          "settings": {
-            "icon": "star",
-            "title": "Premium Quality",
-            "text": "<p>Formulated with high-quality ingredients for superior cleaning performance.</p>"
-          }
-        },
-        "block_3": {
-          "type": "benefit",
-          "settings": {
-            "icon": "shield",
-            "title": "Safe & Non-Toxic",
-            "text": "<p>Free from harsh chemicals, safe for children, pets, and sensitive skin.</p>"
-          }
-        },
-        "block_4": {
-          "type": "benefit",
-          "settings": {
-            "icon": "medal",
-            "title": "Proven Results",
-            "text": "<p>Trusted by thousands of satisfied customers and professional cleaners.</p>"
-          }
-        }
-      },
+    "featured_collection": {
+      "type": "featured-collection",
       "settings": {
-        "heading": "Why Choose Our Products?",
-        "description": "<p>We're committed to providing effective and eco-friendly cleaning solutions for every home</p>",
-        "background_color": "#f9f9f9"
-      }
-    },
-    "testimonials": {
-      "type": "testimonials",
-      "blocks": {
-        "block_1": {
-          "type": "testimonial",
-          "settings": {
-            "rating": 5,
-            "testimonial": "<p>These cleaning products have completely changed my cleaning routine. They work better than anything I've tried before and I love that they're eco-friendly!</p>",
-            "author": "Sarah M.",
-            "position": "Homeowner"
-          }
-        },
-        "block_2": {
-          "type": "testimonial",
-          "settings": {
-            "rating": 5,
-            "testimonial": "<p>As a professional cleaner, I've tried countless products. These are by far the most effective and pleasant to use. My clients always compliment the fresh, clean scent!</p>",
-            "author": "John D.",
-            "position": "Professional Cleaner"
-          }
-        },
-        "block_3": {
-          "type": "testimonial",
-          "settings": {
-            "rating": 5,
-            "testimonial": "<p>I have severe allergies and most cleaning products trigger them. These products are gentle yet effective, and I can finally clean without any reactions.</p>",
-            "author": "Emma R.",
-            "position": "Customer"
-          }
-        }
-      },
-      "settings": {
-        "heading": "Loved by Our Customers",
-        "description": "<p>Don't just take our word for it - hear what our customers have to say</p>",
-        "background_color": "#f5f9f5"
-      }
-    },
-    "cta_banner": {
-      "type": "cta-banner",
-      "settings": {
-        "background_image": "shopify://shop_images/cta-bg.jpg",
-        "overlay_color": "#000000",
-        "overlay_opacity": 40,
-        "heading": "Ready for a Cleaner Home?",
-        "text": "<p>Join thousands of satisfied customers who trust our cleaning solutions</p>",
-        "button_label": "Shop Now",
-        "button_link": "shopify://collections/all",
-        "secondary_button_label": "Contact Us",
-        "secondary_button_link": "shopify://pages/contact",
-        "text_alignment": "center",
-        "padding_top": 100,
-        "padding_bottom": 100
-      }
-    },
-    "featured_blog": {
-      "type": "featured-blog",
-      "settings": {
-        "blog": "news",
-        "post_limit": 3,
-        "columns_desktop": 3,
+        "title": "Featured products",
+        "heading_size": "h2",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "collection": "all",
+        "products_to_show": 8,
+        "columns_desktop": 4,
+        "color_scheme": "scheme-1",
+        "full_width": false,
         "show_view_all": true,
-        "show_image": true,
-        "show_date": true,
-        "show_author": false,
-        "color_scheme": "scheme-1"
-      }
-    },
-    "newsletter": {
-      "type": "newsletter",
-      "settings": {
-        "color_scheme": "scheme-2",
-        "full_width": true
+        "view_all_style": "solid",
+        "enable_desktop_slider": false,
+        "swipe_on_mobile": false,
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none",
+        "columns_mobile": "2",
+        "padding_top": 44,
+        "padding_bottom": 36
       }
     }
   },
   "order": [
-    "hero_slider",
-    "features_bar",
-    "featured_products",
-    "banner_split",
-    "product_benefits",
-    "testimonials",
-    "cta_banner",
-    "featured_blog",
-    "newsletter"
+    "image_banner",
+    "featured_collection"
   ]
 }
