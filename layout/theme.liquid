@@ -389,16 +389,82 @@
   data-api-endpoint=""
   data-client-id=""
 ></script>
-  <!-- CSC Chatbot Widget START -->
-  <iframe 
-    src="https://customer-service-chatbot-xi.vercel.app/"
-    style="position:fixed; right:24px; bottom:24px; width:370px; height:480px; border:none; z-index:99999; border-radius:18px; box-shadow:0 8px 32px rgba(0,0,0,0.2); background: transparent;"
-    id="csc-chatbot-widget"
-    allow="microphone; clipboard-write"
-    title="Customer Support Chatbot"
-    loading="lazy"
-    allowtransparency="true"
-  ></iframe>
-  <!-- CSC Chatbot Widget END -->
+  <!-- Chat Button START -->
+  <style>
+    .chat-button {
+      position: fixed;
+      right: 24px;
+      bottom: 24px;
+      background: #2563eb;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      font-size: 24px;
+      cursor: pointer;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+      z-index: 99999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+    }
+    .chat-button:hover {
+      background: #1d4ed8;
+      transform: scale(1.1);
+    }
+    .chat-popup {
+      display: none;
+      position: fixed;
+      right: 24px;
+      bottom: 100px;
+      width: 370px;
+      height: 600px;
+      border: none;
+      border-radius: 12px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+      z-index: 99998;
+      background: white;
+    }
+    .chat-popup iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      border-radius: 12px;
+    }
+  </style>
+
+  <button class="chat-button" onclick="toggleChat()">💬</button>
+  
+  <div id="chatPopup" class="chat-popup">
+    <iframe 
+      src="https://customer-service-chatbot-xi.vercel.app/"
+      allow="microphone; clipboard-write"
+      title="Customer Support Chatbot"
+      loading="lazy"
+    ></iframe>
+  </div>
+
+  <script>
+    function toggleChat() {
+      const popup = document.getElementById('chatPopup');
+      if (popup.style.display === 'block') {
+        popup.style.display = 'none';
+      } else {
+        popup.style.display = 'block';
+      }
+    }
+    
+    // Close popup when clicking outside
+    document.addEventListener('click', function(event) {
+      const popup = document.getElementById('chatPopup');
+      const button = document.querySelector('.chat-button');
+      if (event.target !== popup && event.target !== button && !popup.contains(event.target) && !button.contains(event.target)) {
+        popup.style.display = 'none';
+      }
+    });
+  </script>
+  <!-- Chat Button END -->
   </body>
 </html>
