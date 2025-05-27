@@ -2,15 +2,6 @@
 <html class="js" lang="{{ request.locale.iso_code }}">
   <head>
 
-  <!-- CSC Chatbot Widget START -->
-<iframe 
-  src="https://customer-service-chatbot-xi.vercel.app/"
-  style="position:fixed; left:24px; bottom:24px; width:370px; height:480px; border:none; z-index:99999; border-radius:18px; box-shadow:0 8px 32px rgba(0,0,0,0.2);"
-  id="csc-chatbot-widget"
-  allow="microphone; clipboard-write"
-></iframe>
-<!-- CSC Chatbot Widget END -->
-
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -398,5 +389,15 @@
   data-api-endpoint=""
   data-client-id=""
 ></script>
+  <!-- CSC Chatbot Widget START -->
+  <iframe 
+    src="https://customer-service-chatbot-xi.vercel.app/"
+    style="position:fixed; right:24px; bottom:24px; width:370px; height:480px; border:none; z-index:99999; border-radius:18px; box-shadow:0 8px 32px rgba(0,0,0,0.2);"
+    id="csc-chatbot-widget"
+    allow="microphone; clipboard-write"
+    title="Customer Support Chatbot"
+    loading="lazy"
+  ></iframe>
+  <!-- CSC Chatbot Widget END -->
   </body>
 </html>
