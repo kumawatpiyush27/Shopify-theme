@@ -628,5 +628,21 @@
   data-api-endpoint=""
   data-client-id=""
 ></script>
-  </body>
+    <!-- Spin Wheel Popup Modal -->
+  <div id="spin-popup-modal" style="display:none;position:fixed;z-index:9999;left:0;top:0;width:100vw;height:100vh;background:rgba(0,0,0,0.65);justify-content:center;align-items:center;">
+    <div style="background:#fff;padding:32px 24px;border-radius:16px;max-width:340px;width:90vw;box-shadow:0 8px 32px rgba(0,0,0,0.18);text-align:center;position:relative;">
+      <button id="spin-popup-close" style="position:absolute;top:8px;right:12px;background:none;border:none;font-size:1.5em;cursor:pointer;">&times;</button>
+      <h3 style="margin-bottom:12px;">Spin & Win 10% Off!</h3>
+      <div id="spin-wheel" style="margin:0 auto 18px auto;width:110px;height:110px;border-radius:50%;border:8px solid #f3c623;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;">
+        <div id="spin-wheel-inner" style="width:100px;height:100px;border-radius:50%;background:conic-gradient(#f3c623 0 36deg,#eee 36deg 72deg,#f3c623 72deg 108deg,#eee 108deg 144deg,#f3c623 144deg 180deg,#eee 180deg 216deg,#f3c623 216deg 252deg,#eee 252deg 288deg,#f3c623 288deg 324deg,#eee 324deg 360deg);transition:transform 2.5s cubic-bezier(.17,.67,.83,.67);display:flex;align-items:center;justify-content:center;"></div>
+        <div style="position:absolute;top:-18px;left:50%;transform:translateX(-50%);width:0;height:0;border-left:12px solid transparent;border-right:12px solid transparent;border-bottom:18px solid #e74c3c;"></div>
+      </div>
+      <form id="spin-popup-form">
+        <input type="tel" id="spin-phone" placeholder="Enter phone number" maxlength="15" required style="width:100%;padding:8px 10px;margin-bottom:14px;border-radius:6px;border:1px solid #ccc;font-size:1em;">
+        <button type="submit" id="spin-submit" style="width:100%;background:#f3c623;color:#222;font-weight:bold;padding:10px 0;border:none;border-radius:6px;font-size:1.1em;cursor:pointer;">Spin & Get Discount</button>
+      </form>
+      <div id="spin-result" style="display:none;margin-top:14px;font-size:1.2em;color:#27ae60;font-weight:bold;">You got 10% OFF!</div>
+    </div>
+  </div>
+</body>
 </html>
