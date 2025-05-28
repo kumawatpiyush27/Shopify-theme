@@ -21,27 +21,33 @@
 
 .customization-popup__content {
   background: white;
-  padding: 2.5rem;
+  padding: 2rem;
   border-radius: 8px;
   width: 100%;
-  max-width: 45rem;
+  max-width: 40rem;
   max-height: 90vh;
   overflow-y: auto;
   position: relative;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
   text-align: center;
 }
 
 .customization-popup__header {
-  margin-bottom: 2.5rem;
+  margin-bottom: 2rem;
   padding-right: 2.4rem;
   text-align: center;
 }
 
 .customization-popup__product-image {
   margin: 0 auto 1.5rem;
-  width: 120px;
-  height: 120px;
+  width: 100px;
+  height: 100px;
+  background-color: #f5f5f5;
+  border-radius: 8px;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .customization-popup__product-image img {
@@ -51,27 +57,30 @@
 }
 
 .customization-popup__title {
-  font-size: 2rem;
-  margin-bottom: 1rem;
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
   font-weight: 600;
+  color: #333;
 }
 
 .customization-popup__price {
-  font-size: 1.4rem;
-  color: rgb(var(--color-base-accent-1));
-  font-weight: 500;
+  font-size: 1.3rem;
+  color: #666;
+  font-weight: 400;
+  margin-top: 0.2rem;
 }
 
 .customization-popup__close {
   position: absolute;
-  top: 1.2rem;
-  right: 1.2rem;
+  top: 1rem;
+  right: 1rem;
   background: none;
   border: none;
   padding: 0.5rem;
   cursor: pointer;
-  color: rgba(var(--color-foreground), 0.75);
-  transition: color var(--duration-default) ease;
+  color: #999;
+  transition: color 0.2s ease;
+  z-index: 10;
 }
 
 .customization-popup__close:hover {
@@ -111,22 +120,34 @@
 
 .customization-popup__actions {
   display: flex;
-  gap: 1.2rem;
-  margin-top: 2.4rem;
+  margin-top: 2rem;
   justify-content: center;
-  flex-wrap: wrap;
 }
 
-.customization-popup__actions .button {
-  min-width: 12rem;
-  border-radius: 4px;
+.skip-button {
+  background: none;
+  border: none;
+  color: #0066cc;
+  font-size: 1.4rem;
+  font-weight: 500;
+  cursor: pointer;
+  text-decoration: underline;
+  padding: 0.5rem 1rem;
 }
 
 .customization-popup__terms {
-  margin-top: 2rem;
-  font-size: 1.1rem;
-  color: rgba(var(--color-foreground), 0.6);
+  margin-top: 1.5rem;
+  font-size: 1rem;
+  color: #999;
   text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.3rem;
+}
+
+.dropdown-icon {
+  margin-top: 2px;
 }
 
 /* Customization button styles */
@@ -245,12 +266,13 @@
 
 .customization-popup .field__input {
   width: 100%;
-  padding: 1.2rem 1.6rem;
-  border: 0.1rem solid rgba(var(--color-foreground), 0.2);
+  padding: 1rem 1.2rem;
+  border: 1px solid #ddd;
   border-radius: 4px;
   font-size: 1.4rem;
-  transition: border-color var(--duration-default) ease;
+  transition: border-color 0.2s ease;
   text-align: center;
+  background-color: #f9f9f9;
 }
 
 .customization-popup .field__input:focus {
@@ -262,17 +284,20 @@
 .customization-popup .field__label {
   display: block;
   margin-bottom: 0.8rem;
-  font-size: 1.4rem;
-  font-weight: 500;
-  color: rgb(var(--color-foreground));
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #333;
   text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 .customization-popup .field__helper-text {
   margin-top: 0.8rem;
-  font-size: 1.2rem;
-  color: rgba(var(--color-foreground), 0.7);
+  font-size: 1rem;
+  color: #666;
   text-align: center;
+  line-height: 1.4;
 }
 
 /* Responsive styles */

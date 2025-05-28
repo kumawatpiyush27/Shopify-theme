@@ -1,7 +1,9 @@
 <div id="CustomizationPopup-{{ section.id }}" class="customization-popup" role="dialog" aria-modal="true" aria-label="{{ 'products.product.customize.popup_title' | t }}">
   <div class="customization-popup__content">
     <button type="button" class="customization-popup__close" aria-label="{{ 'accessibility.close' | t }}">
-      {% render 'icon-close' %}
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M14 1.41L12.59 0L7 5.59L1.41 0L0 1.41L5.59 7L0 12.59L1.41 14L7 8.41L12.59 14L14 12.59L8.41 7L14 1.41Z" fill="currentColor"/>
+      </svg>
     </button>
     
     <div class="customization-popup__header">
@@ -32,16 +34,16 @@
     </div>
     
     <div class="customization-popup__actions">
-      <button type="button" class="button button--secondary" data-close-customization>
+      <button type="button" class="skip-button" data-close-customization>
         {{ 'products.product.customize.skip' | t }}
-      </button>
-      <button type="button" class="button button--primary" data-add-customized-to-cart>
-        {{ 'products.product.customize.add_to_cart' | t }}
       </button>
     </div>
     
     <div class="customization-popup__terms">
       {{ 'products.product.customize.terms' | t }}
+      <svg class="dropdown-icon" width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
     </div>
   </div>
 </div>
@@ -50,85 +52,94 @@
   document.addEventListener('DOMContentLoaded', function() {
     const customizationButtons = document.querySelectorAll('[data-customize-button]');
     const closeButtons = document.querySelectorAll('[data-close-customization]');
-    const addCustomizedButtons = document.querySelectorAll('[data-add-customized-to-cart]');
     const customizationPopups = document.querySelectorAll('.customization-popup');
     const body = document.body;
     
     // Set fixed personalization price
     const personalizationPrice = 69;
     
-    // Update price display
-    document.querySelectorAll('#CustomizationPrice').forEach(priceEl => {
-      if (personalizationPrice > 0) {
-        priceEl.textContent = `+${Shopify.formatMoney(personalizationPrice, {{ shop.money_format | json }})}`;
-      } else {
-        priceEl.closest('.customization-price').style.display = 'none';
-      }
-    });
-    
-    // Toggle popup
-    function togglePopup(popup, show) {
-      if (show) {
-        popup.classList.add('is-visible');
-        body.classList.add('overflow-hidden');
-        popup.setAttribute('aria-hidden', 'false');
-        popup.querySelector('input').focus();
-      } else {
-        popup.classList.remove('is-visible');
-        body.classList.remove('overflow-hidden');
-        popup.setAttribute('aria-hidden', 'true');
-      }
-    }
-    
     // Open popup
     customizationButtons.forEach(button => {
-      button.addEventListener('click', (e) => {
-        e.preventDefault();
-        const sectionId = button.closest('.shopify-section').id;
+      button.addEventListener('click', function() {
+        const sectionId = this.dataset.sectionId;
         const popup = document.querySelector(`#CustomizationPopup-${sectionId}`);
-        if (popup) togglePopup(popup, true);
+        if (popup) {
+          popup.classList.add('is-visible');
+          body.style.overflow = 'hidden';
+          
+          // Focus on input field
+          const nameInput = popup.querySelector(`#CustomName-${sectionId}`);
+          if (nameInput) {
+            setTimeout(() => {
+              nameInput.focus();
+            }, 100);
+          }
+        }
       });
     });
     
     // Close popup
     closeButtons.forEach(button => {
-      button.addEventListener('click', () => {
-        const popup = button.closest('.customization-popup');
-        togglePopup(popup, false);
+      button.addEventListener('click', function() {
+        const popup = this.closest('.customization-popup');
+        if (popup) {
+          popup.classList.remove('is-visible');
+          body.style.overflow = '';
+        }
       });
     });
     
-    // Add customized to cart
-    addCustomizedButtons.forEach(button => {
-      button.addEventListener('click', () => {
-        const popup = button.closest('.customization-popup');
-        const sectionId = popup.id.replace('CustomizationPopup-', '');
-        const customNameInput = document.querySelector(`#CustomName-${sectionId}`);
-        
-        if (!customNameInput.value.trim()) {
-          customNameInput.focus();
-          return;
+    // Close popup when clicking outside
+    customizationPopups.forEach(popup => {
+      popup.addEventListener('click', function(e) {
+        if (e.target === this) {
+          this.classList.remove('is-visible');
+          body.style.overflow = '';
         }
-        
-        // Add personalization price if applicable
-        if (personalizationPrice > 0) {
-          const priceInput = document.createElement('input');
-          priceInput.type = 'hidden';
-          priceInput.name = 'properties[_PersonalizationPrice]';
+      });
+    });
+    
+    // Handle form submission
+    const nameInputs = document.querySelectorAll('.customization-popup .field__input');
+    nameInputs.forEach(input => {
+      input.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter') {
+          e.preventDefault();
+          
+          if (!this.value.trim()) {
+            this.setCustomValidity('{{ "products.product.customize.required_field" | t }}');
+            this.reportValidity();
+            return;
+          }
+          
+          this.setCustomValidity('');
+          
+          // Get the product form
+          const sectionId = this.closest('.customization-popup').id.replace('CustomizationPopup-', '');
+          const productForm = document.querySelector(`#product-form-${sectionId}`);
+          if (!productForm) return;
+          
+          // Add personalization price as a property
+          let priceInput = productForm.querySelector('input[name="properties[_PersonalizationPrice]"]');
+          if (!priceInput) {
+            priceInput = document.createElement('input');
+            priceInput.type = 'hidden';
+            priceInput.name = 'properties[_PersonalizationPrice]';
+            productForm.appendChild(priceInput);
+          }
           priceInput.value = personalizationPrice;
-          document.querySelector(`#product-form-${sectionId}`).appendChild(priceInput);
+          
+          // Submit the form
+          const submitButton = productForm.querySelector('button[type="submit"]');
+          if (submitButton) {
+            submitButton.click();
+          }
+          
+          // Close popup
+          this.closest('.customization-popup').classList.remove('is-visible');
+          body.style.overflow = '';
         }
-        
-        // Submit the form
-        document.querySelector(`#product-form-${sectionId}`).submit();
       });
-    });
-    
-    // Close on ESC
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') {
-        customizationPopups.forEach(popup => togglePopup(popup, false));
-      }
     });
   });
 </script>
