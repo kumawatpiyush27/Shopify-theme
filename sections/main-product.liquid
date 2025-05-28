@@ -85,6 +85,12 @@
         >
           {%- assign product_form_id = 'product-form-' | append: section.id -%}
 
+          {%- if product.metafields.custom.personalization_price != blank -%}
+            <div class="product-customization-container">
+              {%- render 'customization-button', product: product, section: section -%}
+            </div>
+          {%- endif -%}
+          
           {%- for block in section.blocks -%}
             {%- case block.type -%}
               {%- when '@app' -%}

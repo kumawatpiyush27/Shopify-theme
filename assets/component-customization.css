@@ -20,15 +20,15 @@
 }
 
 .customization-popup__content {
-  background: rgb(var(--color-background));
-  padding: 2.4rem;
+  background: white;
+  padding: 3rem;
   border-radius: var(--popup-corner-radius);
   width: 100%;
   max-width: 50rem;
   max-height: 90vh;
   overflow-y: auto;
   position: relative;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
 }
 
 .customization-popup__header {
@@ -64,6 +64,25 @@
   font-size: 1.4rem;
 }
 
+.price-highlight {
+  color: rgb(var(--color-base-accent-1));
+  font-size: 1.5rem;
+}
+
+.customization-description {
+  margin-top: 1rem;
+  font-size: 1.4rem;
+  line-height: 1.5;
+  color: rgba(var(--color-foreground), 0.75);
+}
+
+.field__helper-text {
+  margin-top: 0.5rem;
+  font-size: 1.2rem;
+  color: rgba(var(--color-foreground), 0.7);
+  font-style: italic;
+}
+
 .customization-popup__actions {
   display: flex;
   gap: 1.2rem;
@@ -77,9 +96,56 @@
 }
 
 /* Customization button styles */
-.customization-button-container {
-  margin-top: 1.2rem;
+.product-customization-container {
+  margin-bottom: 2rem;
+  padding: 0;
   width: 100%;
+}
+
+.customization-button-container {
+  margin: 0;
+  width: 100%;
+}
+
+.customization-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 1.2rem 2rem;
+  border: 2px solid rgb(var(--color-base-accent-1));
+  border-radius: 8px;
+  background-color: rgb(var(--color-base-accent-1), 0.1);
+  color: rgb(var(--color-base-accent-1));
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.customization-button:hover {
+  background-color: rgb(var(--color-base-accent-1), 0.2);
+}
+
+.customization-button__content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.customization-button__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.customization-button__icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+.customization-button__text {
+  font-size: 1.6rem;
+  font-weight: 500;
 }
 
 /* Form field styles */

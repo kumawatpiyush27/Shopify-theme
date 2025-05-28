@@ -1,4 +1,4 @@
-<div id="CustomizationPopup-{{ section.id }}" class="customization-popup modal__content" role="dialog" aria-modal="true" aria-label="{{ 'products.product.customize.title' | t }}">
+<div id="CustomizationPopup-{{ section.id }}" class="customization-popup" role="dialog" aria-modal="true" aria-label="{{ 'products.product.customize.title' | t }}">
   <div class="customization-popup__content">
     <button type="button" class="customization-popup__close" aria-label="{{ 'accessibility.close' | t }}">
       {% render 'icon-close' %}
@@ -8,8 +8,9 @@
       <h2 class="h3">{{ 'products.product.customize.title' | t }}</h2>
       <p class="customization-price">
         {{ 'products.product.customize.additional_price' | t }}: 
-        <span id="CustomizationPrice-{{ section.id }}"></span>
+        <span id="CustomizationPrice-{{ section.id }}" class="price-highlight"></span>
       </p>
+      <p class="customization-description">{{ 'products.product.customize.description' | t }}</p>
     </div>
     
     <div class="field">
@@ -24,7 +25,9 @@
         form="product-form-{{ section.id }}"
         placeholder="{{ 'products.product.customize.name_placeholder' | t }}"
         required
+        maxlength="30"
       >
+      <div class="field__helper-text">{{ 'products.product.customize.name_helper' | t }}</div>
     </div>
     
     <div class="customization-popup__actions">

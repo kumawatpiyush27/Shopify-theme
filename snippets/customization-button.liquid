@@ -2,11 +2,16 @@
   <div class="customization-button-container" {{ block.shopify_attributes }}>
     <button
       type="button"
-      class="button button--secondary button--full-width"
+      class="customization-button"
       data-customize-button
       data-section-id="{{ section.id }}"
     >
-      <span>{{ 'products.product.customize.title' | t }}</span>
+      <div class="customization-button__content">
+        <span class="customization-button__icon">
+          {% render 'icon-edit' %}
+        </span>
+        <span class="customization-button__text">{{ 'products.product.customize.title' | t }}</span>
+      </div>
     </button>
   </div>
   

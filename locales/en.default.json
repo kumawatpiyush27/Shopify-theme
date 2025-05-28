@@ -113,6 +113,8 @@
         "title": "Personalize Your Product",
         "name_label": "Name to be personalized",
         "name_placeholder": "Enter the name",
+        "name_helper": "Maximum 30 characters. Special characters and emojis are allowed.",
+        "description": "Make this product truly yours by adding your personalized name. The personalization will be added exactly as you type it.",
         "cod_not_available": "Cash on Delivery is not available for personalized items. Please use online payment methods.",
         "additional_price": "Additional Price",
         "cancel": "Cancel",
