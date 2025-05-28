@@ -1,42 +1,47 @@
-<div id="CustomizationPopup-{{ section.id }}" class="customization-popup" role="dialog" aria-modal="true" aria-label="{{ 'products.product.customize.title' | t }}">
+<div id="CustomizationPopup-{{ section.id }}" class="customization-popup" role="dialog" aria-modal="true" aria-label="{{ 'products.product.customize.popup_title' | t }}">
   <div class="customization-popup__content">
     <button type="button" class="customization-popup__close" aria-label="{{ 'accessibility.close' | t }}">
       {% render 'icon-close' %}
     </button>
     
     <div class="customization-popup__header">
-      <h2 class="h3">{{ 'products.product.customize.title' | t }}</h2>
-      <p class="customization-price">
-        {{ 'products.product.customize.additional_price' | t }}: 
-        <span id="CustomizationPrice-{{ section.id }}" class="price-highlight"></span>
-      </p>
-      <p class="customization-description">{{ 'products.product.customize.description' | t }}</p>
+      <div class="customization-popup__product-image">
+        <img src="{{ product.featured_image | img_url: '200x200', crop: 'center' }}" alt="{{ product.title | escape }}">
+      </div>
+      <h2 class="customization-popup__title">{{ 'products.product.customize.popup_title' | t: product: product.title }}</h2>
+      <p class="customization-popup__price">{{ 'products.product.customize.price_note' | t: price: product.metafields.custom.personalization_price | money }}</p>
     </div>
     
-    <div class="field">
-      <label class="field__label" for="CustomName-{{ section.id }}">
-        {{ 'products.product.customize.name_label' | t }}
-      </label>
-      <input
-        type="text"
-        id="CustomName-{{ section.id }}"
-        class="field__input"
-        name="properties[Custom Name]"
-        form="product-form-{{ section.id }}"
-        placeholder="{{ 'products.product.customize.name_placeholder' | t }}"
-        required
-        maxlength="30"
-      >
-      <div class="field__helper-text">{{ 'products.product.customize.name_helper' | t }}</div>
+    <div class="customization-popup__form">
+      <div class="field">
+        <label class="field__label" for="CustomName-{{ section.id }}">
+          {{ 'products.product.customize.name_label' | t }}
+        </label>
+        <input
+          type="text"
+          id="CustomName-{{ section.id }}"
+          class="field__input"
+          name="properties[Custom Name]"
+          form="product-form-{{ section.id }}"
+          placeholder="{{ 'products.product.customize.name_placeholder' | t }}"
+          required
+          maxlength="12"
+        >
+        <div class="field__helper-text">{{ 'products.product.customize.name_helper' | t }}</div>
+      </div>
     </div>
     
     <div class="customization-popup__actions">
       <button type="button" class="button button--secondary" data-close-customization>
-        {{ 'products.product.customize.cancel' | t }}
+        {{ 'products.product.customize.skip' | t }}
       </button>
-      <button type="button" class="button" data-add-customized-to-cart>
+      <button type="button" class="button button--primary" data-add-customized-to-cart>
         {{ 'products.product.customize.add_to_cart' | t }}
       </button>
+    </div>
+    
+    <div class="customization-popup__terms">
+      {{ 'products.product.customize.terms' | t }}
     </div>
   </div>
 </div>

@@ -1,5 +1,11 @@
 {%- if product.metafields.custom.personalization_price != blank -%}
   <div class="customization-button-container" {{ block.shopify_attributes }}>
+    <div class="customization-heading">
+      <h3>{{ 'products.product.customize.heading' | t }}</h3>
+    </div>
+    <div class="customization-description">
+      {{ 'products.product.customize.description' | t }}
+    </div>
     <button
       type="button"
       class="customization-button"
@@ -10,9 +16,12 @@
         <span class="customization-button__icon">
           {% render 'icon-edit' %}
         </span>
-        <span class="customization-button__text">{{ 'products.product.customize.title' | t }}</span>
+        <span class="customization-button__text">{{ 'products.product.customize.button_text' | t }}</span>
       </div>
     </button>
+    <div class="customization-price-note">
+      {{ 'products.product.customize.price_note' | t: price: product.metafields.custom.personalization_price | money }}
+    </div>
   </div>
   
   {%- render 'product-customization' -%}

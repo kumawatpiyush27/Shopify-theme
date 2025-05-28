@@ -21,19 +21,45 @@
 
 .customization-popup__content {
   background: white;
-  padding: 3rem;
-  border-radius: var(--popup-corner-radius);
+  padding: 2.5rem;
+  border-radius: 8px;
   width: 100%;
-  max-width: 50rem;
+  max-width: 45rem;
   max-height: 90vh;
   overflow-y: auto;
   position: relative;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  text-align: center;
 }
 
 .customization-popup__header {
-  margin-bottom: 2rem;
+  margin-bottom: 2.5rem;
   padding-right: 2.4rem;
+  text-align: center;
+}
+
+.customization-popup__product-image {
+  margin: 0 auto 1.5rem;
+  width: 120px;
+  height: 120px;
+}
+
+.customization-popup__product-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.customization-popup__title {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.customization-popup__price {
+  font-size: 1.4rem;
+  color: rgb(var(--color-base-accent-1));
+  font-weight: 500;
 }
 
 .customization-popup__close {
@@ -87,19 +113,30 @@
   display: flex;
   gap: 1.2rem;
   margin-top: 2.4rem;
-  justify-content: flex-end;
+  justify-content: center;
   flex-wrap: wrap;
 }
 
 .customization-popup__actions .button {
   min-width: 12rem;
+  border-radius: 4px;
+}
+
+.customization-popup__terms {
+  margin-top: 2rem;
+  font-size: 1.1rem;
+  color: rgba(var(--color-foreground), 0.6);
+  text-align: center;
 }
 
 /* Customization button styles */
 .product-customization-container {
-  margin-bottom: 2rem;
-  padding: 0;
+  margin: 2.5rem 0;
+  padding: 1.5rem;
   width: 100%;
+  border: 1px solid rgba(var(--color-foreground), 0.1);
+  border-radius: 8px;
+  background-color: rgba(var(--color-foreground), 0.03);
 }
 
 .customization-button-container {
@@ -107,29 +144,44 @@
   width: 100%;
 }
 
+.customization-heading h3 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: rgb(var(--color-foreground));
+}
+
+.customization-description {
+  font-size: 1.4rem;
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+  color: rgba(var(--color-foreground), 0.75);
+}
+
 .customization-button {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 100%;
-  padding: 1.2rem 2rem;
-  border: 2px solid rgb(var(--color-base-accent-1));
-  border-radius: 8px;
-  background-color: rgb(var(--color-base-accent-1), 0.1);
-  color: rgb(var(--color-base-accent-1));
+  width: auto;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 4px;
+  background-color: rgb(var(--color-base-accent-1));
+  color: rgb(var(--color-base-background-1));
   transition: all 0.3s ease;
   cursor: pointer;
+  margin: 0 auto;
 }
 
 .customization-button:hover {
-  background-color: rgb(var(--color-base-accent-1), 0.2);
+  background-color: rgb(var(--color-base-accent-1), 0.9);
 }
 
 .customization-button__content {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 1rem;
+  gap: 0.8rem;
 }
 
 .customization-button__icon {
@@ -139,16 +191,27 @@
 }
 
 .customization-button__icon svg {
-  width: 20px;
-  height: 20px;
+  width: 18px;
+  height: 18px;
 }
 
 .customization-button__text {
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   font-weight: 500;
 }
 
+.customization-price-note {
+  margin-top: 1.2rem;
+  font-size: 1.3rem;
+  color: rgba(var(--color-foreground), 0.7);
+  text-align: center;
+}
+
 /* Form field styles */
+.customization-popup__form {
+  margin-bottom: 2rem;
+}
+
 .customization-popup .field {
   margin-bottom: 1.6rem;
 }
@@ -157,14 +220,15 @@
   width: 100%;
   padding: 1.2rem 1.6rem;
   border: 0.1rem solid rgba(var(--color-foreground), 0.2);
-  border-radius: var(--inputs-radius);
+  border-radius: 4px;
   font-size: 1.4rem;
   transition: border-color var(--duration-default) ease;
+  text-align: center;
 }
 
 .customization-popup .field__input:focus {
-  border-color: rgb(var(--color-foreground));
-  box-shadow: 0 0 0 0.2rem rgba(var(--color-foreground), 0.1);
+  border-color: rgb(var(--color-base-accent-1));
+  box-shadow: 0 0 0 0.2rem rgba(var(--color-base-accent-1), 0.1);
   outline: none;
 }
 
@@ -174,6 +238,14 @@
   font-size: 1.4rem;
   font-weight: 500;
   color: rgb(var(--color-foreground));
+  text-align: center;
+}
+
+.customization-popup .field__helper-text {
+  margin-top: 0.8rem;
+  font-size: 1.2rem;
+  color: rgba(var(--color-foreground), 0.7);
+  text-align: center;
 }
 
 /* Responsive styles */
