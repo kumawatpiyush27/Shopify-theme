@@ -9,7 +9,7 @@
         <img src="{{ product.featured_image | img_url: '200x200', crop: 'center' }}" alt="{{ product.title | escape }}">
       </div>
       <h2 class="customization-popup__title">{{ 'products.product.customize.popup_title' | t: product: product.title }}</h2>
-      <p class="customization-popup__price">{{ 'products.product.customize.price_note' | t: price: product.metafields.custom.personalization_price | money }}</p>
+      <p class="customization-popup__price">{{ 'products.product.customize.price_note' | t: price: '₹69' }}</p>
     </div>
     
     <div class="customization-popup__form">
@@ -54,8 +54,8 @@
     const customizationPopups = document.querySelectorAll('.customization-popup');
     const body = document.body;
     
-    // Get personalization price from meta field
-    const personalizationPrice = {{ product.metafields.custom.personalization_price | default: 0 }};
+    // Set fixed personalization price
+    const personalizationPrice = 69;
     
     // Update price display
     document.querySelectorAll('#CustomizationPrice').forEach(priceEl => {
