@@ -84,17 +84,15 @@
           class="product__info-container{% if section.settings.enable_sticky_info %} product__column-sticky{% endif %}"
         >
           {%- assign product_form_id = 'product-form-' | append: section.id -%}
-
-          {%- if product.metafields.custom.personalization_price != blank -%}
-            <div class="product-customization-container">
-              {%- render 'customization-button', product: product, section: section -%}
-            </div>
-          {%- endif -%}
           
           {%- for block in section.blocks -%}
             {%- case block.type -%}
               {%- when '@app' -%}
                 {% render block %}
+              {%- when 'customization' -%}
+                <div {{ block.shopify_attributes }}>
+                  {%- render 'customization-button', product: product, section: section -%}
+                </div>
               {%- when 'text' -%}
                 <p
                   class="product__text inline-richtext{% if block.settings.text_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.text_style == 'subtitle' %} subtitle{% endif %}"
@@ -738,6 +736,17 @@
   "blocks": [
     {
       "type": "@app"
+    },
+    {
+      "type": "customization",
+      "name": "Product Customization",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "paragraph",
+          "content": "Add a customization option for this product. Customers can enter a personalized name."
+        }
+      ]
     },
     {
       "type": "text",
