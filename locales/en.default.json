@@ -109,6 +109,16 @@
       "add_to_cart": "Add to cart",
       "choose_options": "Choose options",
       "choose_product_options": "Choose options for {{ product_name }}",
+      "customize": {
+        "title": "Personalize Your Product",
+        "name_label": "Name to be personalized",
+        "name_placeholder": "Enter the name",
+        "cod_not_available": "Cash on Delivery is not available for personalized items. Please use online payment methods.",
+        "additional_price": "Additional Price",
+        "cancel": "Cancel",
+        "add_to_cart": "Add to Cart",
+        "required_field": "This field is required"
+      },
       "description": "Description",
       "inventory_in_stock": "In stock",
       "inventory_in_stock_show_count": "{{ quantity }} in stock",

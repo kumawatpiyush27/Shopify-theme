@@ -1,0 +1,90 @@
+{%- if product.metafields.custom.personalization_price != blank -%}
+  <div class="customization-button-container" {{ block.shopify_attributes }}>
+    <button
+      type="button"
+      class="button button--secondary button--full-width"
+      data-customize-button
+      data-section-id="{{ section.id }}"
+    >
+      <span>{{ 'products.product.customize.title' | t }}</span>
+    </button>
+  </div>
+  
+  {%- render 'product-customization' -%}
+  
+  <style>
+    .customization-button-container {
+      margin-top: 1.2rem;
+    }
+    
+    .customization-popup {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 1000;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .customization-popup.is-visible {
+      display: flex;
+    }
+    
+    .customization-popup__content {
+      background: white;
+      padding: 2.4rem;
+      border-radius: var(--popup-corner-radius);
+      width: 100%;
+      max-width: 50rem;
+      max-height: 90vh;
+      overflow-y: auto;
+      position: relative;
+    }
+    
+    .customization-popup__header {
+      margin-bottom: 2rem;
+    }
+    
+    .customization-popup__close {
+      position: absolute;
+      top: 1.2rem;
+      right: 1.2rem;
+      background: none;
+      border: none;
+      padding: 0.5rem;
+      cursor: pointer;
+    }
+    
+    .customization-price {
+      margin-top: 0.5rem;
+      font-weight: bold;
+      color: var(--color-1);
+    }
+    
+    .customization-popup__actions {
+      display: flex;
+      gap: 1.2rem;
+      margin-top: 2rem;
+      justify-content: flex-end;
+    }
+    
+    @media screen and (max-width: 749px) {
+      .customization-popup__content {
+        margin: 0 1.2rem;
+        padding: 2rem 1.6rem;
+      }
+      
+      .customization-popup__actions {
+        flex-direction: column;
+      }
+      
+      .customization-popup__actions .button {
+        width: 100%;
+      }
+    }
+  </style>
+{%- endif -%}
